@@ -97,6 +97,13 @@ class AuthUser extends Principal {
         authorities.any { it.authority == Role.DS_EXPLORER_ROLE }
     }
 
+    /**
+     * is this user an advanced Browse user
+     */
+    def isAdvancedUser() {
+        authorities.any { it.authority == Role.ROLE_ADVANCED_USER }
+    }
+
     /*
      * Should be called with an open session and active transaction
      */
